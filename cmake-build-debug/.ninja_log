@@ -1,0 +1,7 @@
+# ninja log v6
+1	795	7585887546840473	CMakeFiles/insert_sort.dir/insert_sort.cpp.obj	68dfeeab02526c99
+797	1148	7585887554800471	insert_sort.exe	c92228d39d9a9877
+4	664	7585892660157350	CMakeFiles/insert_sort.dir/insert_sort.cpp.obj	68dfeeab02526c99
+664	787	7585892666757355	insert_sort.exe	c92228d39d9a9877
+10	1603	7586149580478352	CMakeFiles/insert_sort.dir/insert_sort.cpp.obj	68dfeeab02526c99
+1604	2058	7586149596412989	insert_sort.exe	c92228d39d9a9877
