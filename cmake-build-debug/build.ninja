@@ -49,8 +49,8 @@ cmake_ninja_workdir = E$:/biancheng/algMIT/cmake-build-debug/
 
 build cmake_object_order_depends_target_insert_sort: phony || .
 
-build CMakeFiles/insert_sort.dir/insert_sort.cpp.obj: CXX_COMPILER__insert_sort_unscanned_Debug E$:/biancheng/algMIT/insert_sort.cpp || cmake_object_order_depends_target_insert_sort
-  DEP_FILE = CMakeFiles\insert_sort.dir\insert_sort.cpp.obj.d
+build CMakeFiles/insert_sort.dir/insert_sort2.1-1.cpp.obj: CXX_COMPILER__insert_sort_unscanned_Debug E$:/biancheng/algMIT/insert_sort2.1-1.cpp || cmake_object_order_depends_target_insert_sort
+  DEP_FILE = CMakeFiles\insert_sort.dir\insert_sort2.1-1.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\insert_sort.dir
   OBJECT_FILE_DIR = CMakeFiles\insert_sort.dir
@@ -63,7 +63,7 @@ build CMakeFiles/insert_sort.dir/insert_sort.cpp.obj: CXX_COMPILER__insert_sort_
 #############################################
 # Link the executable insert_sort.exe
 
-build insert_sort.exe: CXX_EXECUTABLE_LINKER__insert_sort_Debug CMakeFiles/insert_sort.dir/insert_sort.cpp.obj
+build insert_sort.exe: CXX_EXECUTABLE_LINKER__insert_sort_Debug CMakeFiles/insert_sort.dir/insert_sort2.1-1.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\insert_sort.dir

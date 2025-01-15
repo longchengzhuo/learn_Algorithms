@@ -1,6 +1,10 @@
 #include <iostream>
 #include <vector>
 
+/**
+ * illustrate the operation of INSERTION-SORT on the array A = ?31, 41, 59, 26, 41, 58?.
+ */
+
 // decreasing sort
 void insertionSortDecreasing(std::vector<int> &arr) {
     for (int j = 1; j < arr.size(); j++) {
