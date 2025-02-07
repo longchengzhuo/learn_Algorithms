@@ -1,43 +1,66 @@
 #include <iostream>
 #include <vector>
+using namespace std;
 
-/**
- * illustrate the operation of INSERTION-SORT on the array A = ?31, 41, 59, 26, 41, 58?.
- */
+class my_vector{
+  public:
+    my_vector(vector<int> && vec):v(vec){
+      print();
+    }
 
-// decreasing sort
-void insertionSortDecreasing(std::vector<int> &arr) {
-    for (int j = 1; j < arr.size(); j++) {
-        int key = arr[j];
-        int i = j - 1;
-        while (i >= 0 && arr[i] < key) {
-            arr[i+1] = arr[i];
-            --i;
+    void insert_sort(){
+      for(int i = 1; i < len; i++){
+        for(int j = i; j > 0; j--) {
+          if(v[j-1] > v[j]){
+            swap(j);
+          }else {
+            break;
+          }
         }
-        arr[i+1] = key;
+      }
+      cout << "after ";
+      print();
     }
-}
 
-int main() {
-    // 初始化数组
-    std::vector<int> arr = {31, 41, 59, 26, 41, 58};
-
-    // 打印原始数组
-    std::cout << "Original array: ";
-    for (int num : arr) {
-        std::cout << num << " ";
+    void advanced_insert_sort() {
+      for (int i = 1; i < len; i++) {
+        int temp = v[i];
+        int j;
+        for (j = i; j > 0; j--) {
+          if (v[j-1] > temp) {
+            v[j] = v[j-1];
+          }else {
+            break;
+          }
+        }
+        v[j] = temp;
+      }
+      cout << "after advanced sort ";
+      print();
     }
-    std::cout << std::endl;
 
-    // 调用非递增插入排序
-    insertionSortDecreasing(arr);
+  private:
+    vector<int> v;
+    int len = static_cast<int>(v.size());
 
-    // 打印排序后的数组
-    std::cout << "Sorted array (non-increasing order): ";
-    for (int num : arr) {
-        std::cout << num << " ";
+    void swap(int &i){
+      int temp = v[i];
+      v[i] = v[i - 1];
+      v[i - 1] = temp;
     }
-    std::cout << std::endl;
 
-    return 0;
+    void print(){
+      cout << "vector:";
+      for(int number : v){
+        cout << " " << number;
+      }
+      cout << endl;
+    }
+
+};
+
+int main(){
+  my_vector vec({8,7,6,3,4,5,2,1});
+  vec.advanced_insert_sort();
+  return 0;
 }
