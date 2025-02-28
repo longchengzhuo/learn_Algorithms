@@ -4,16 +4,21 @@ using namespace std;
 
 class my_vector{
   public:
-    my_vector(vector<int> && vec):v(vec){
+    explicit my_vector(vector<int> && vec):v(vec){
       print();
     }
 
     void insert_sort(){
-      for(int i = 1; i < len; i++){
-        for(int j = i; j > 0; j--) {
-          if(v[j-1] > v[j]){
+      for(int i = 1; i < len; i++)
+      {
+        for(int j = i; j > 0; j--)
+        {
+          if(v[j-1] > v[j])
+          {
             swap(j);
-          }else {
+          }
+          else
+          {
             break;
           }
         }

@@ -3,4 +3,4 @@ project(algMIT)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(insert_sort insert_sort2.1-1.cpp)
+add_executable(remove_dup remove_duplicates.cpp)
