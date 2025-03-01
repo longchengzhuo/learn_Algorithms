@@ -1,59 +1,30 @@
-#include <iostream>
-#include <vector>
-#include <chrono>
+#include "SortableVector.h"
 
-using namespace std;
-
-class my_vector{
-public:
-	explicit my_vector(vector<int> && vec):v(vec) {
-		print();
-	};
-
-	void advanced_bubble_sort(){
-		for (int i = 0; i < len - 1; i++){
-			bool sorted = true;
-			for (int j = 0; j < len - i - 1; j++) {
-				if (v[j] < v[j+1]) {
-					swap(j+1);
-					sorted = false;
-				}
-			}
-			if (sorted == true){
-				cout << "after short time ";
-				print();
-				exit(0);
-			}
-		}
-		cout << "after long time ";
-		print();
-	}
-
-
-private:
-    void print(){
-		cout << "vector:";
-      	for (int num : v) {
-			cout << num << " ";
-		}
-		cout << endl;
+class bubble_sort:public SortableVector {
+    public:
+    explicit bubble_sort(std::vector <int> && vec):SortableVector(vec) {}
+    void sort() {
+        print_unsort();
+        int len = data_.size();
+        for (int i = 0; i < len - 1; i++) {
+            int sorted = 1;
+            for (int j = len - 1; j > i; j--) {
+                if (data_[j] < data_[j - 1]) {
+                    std::swap(data_[j], data_[j - 1]);
+                    sorted = 0;
+                }
+            }
+            if (sorted == 1) {
+                break;
+            }
+        }
+        print_aftersort();
     }
-
-	void swap(int &&i) {
-      	int temp = v[i];
-      	v[i] = v[i - 1];
-      	v[i - 1] = temp;
-    }
-
-	vector<int> v;
-	int len = static_cast<int>(v.size());
-
-
 };
 
-int main(){
-  my_vector v({8,7,1,2,3,4,5,6});
-  v.advanced_bubble_sort();
-  return 0;
-}
+int main() {
+    bubble_sort v({11,15,12,4,5,6,7,8,9});
+    v.sort();
 
+    return 0;
+}
